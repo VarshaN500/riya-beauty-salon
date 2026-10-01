@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Riya Beauty Salon | Professional Makeup Artist & Hairstylist | Pune</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#0A0A0A;--dark:#111;--gold:#C9A96E;--gold2:#E8C97A;
+  --white:#FAFAFA;--off:#F5F0E8;--mid:#888;--border:#2A2A2A;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden}
+
+/* NAV - NiKS style */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:22px 56px;
+  display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid transparent;
+  transition:all .4s;
+}
+nav.scrolled{background:rgba(10,10,10,.97);border-bottom-color:var(--border)}
+.nav-logo img{height:64px;width:64px;object-fit:contain;border-radius:50%}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{
+  font-size:12px;font-weight:500;color:rgba(255,255,255,.7);
+  text-decoration:none;letter-spacing:1.5px;text-transform:uppercase;
+  transition:color .2s;
+}
+.nav-links a:hover{color:var(--gold)}
+.nav-book{
+  background:var(--white);color:var(--black);
+  padding:12px 28px;font-size:12px;font-weight:600;
+  text-decoration:none;letter-spacing:1.5px;text-transform:uppercase;
+  transition:all .2s;
+}
+.nav-book:hover{background:var(--gold);color:var(--black)}
+
+/* HERO */
+.hero{
+  height:100vh;display:grid;grid-template-columns:1fr 1fr;
+  position:relative;overflow:hidden;
+}
+.hero-left{
+  padding:160px 56px 80px;
+  display:flex;flex-direction:column;justify-content:center;
+  position:relative;z-index:1;
+}
+.hero-tag{
+  font-size:11px;letter-spacing:3px;color:var(--gold);
+  text-transform:uppercase;margin-bottom:28px;
+  display:flex;align-items:center;gap:12px;
+}
+.hero-tag::before{content:'';width:28px;height:1px;background:var(--gold)}
+.hero h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:80px;font-weight:300;line-height:1;
+  color:var(--white);margin-bottom:8px;letter-spacing:-2px;
+}
+.hero h1 em{
+  display:block;font-style:italic;
+  color:var(--gold);font-size:88px;
+}
+.hero-sub{
+  font-size:13px;letter-spacing:1px;color:var(--mid);
+  text-transform:uppercase;margin:20px 0 36px;
+}
+.hero-actions{display:flex;gap:16px;align-items:center}
+.btn-gold{
+  background:var(--gold);color:var(--black);
+  padding:16px 36px;font-size:12px;font-weight:600;
+  letter-spacing:1.5px;text-transform:uppercase;
+  text-decoration:none;transition:all .2s;
+}
+.btn-gold:hover{background:var(--gold2)}
+.btn-outline{
+  border:1px solid rgba(255,255,255,.3);color:var(--white);
+  padding:16px 28px;font-size:12px;font-weight:500;
+  letter-spacing:1px;text-transform:uppercase;
+  text-decoration:none;transition:all .2s;
+}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.hero-right{
+  position:relative;overflow:hidden;
+}
+.hero-right img{
+  width:100%;height:100%;object-fit:cover;
+  filter:brightness(.85);
+}
+.hero-right::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:120px;
+  background:linear-gradient(to right,var(--black),transparent);
+  z-index:1;
+}
+.hero-stats{
+  position:absolute;bottom:48px;left:56px;
+  display:flex;gap:48px;z-index:2;
+}
+.stat-item .num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:36px;font-weight:600;color:var(--gold);line-height:1;
+}
+.stat-item .lbl{font-size:10px;color:var(--mid);letter-spacing:1.5px;margin-top:4px;text-transform:uppercase}
+
+/* MARQUEE */
+.marquee-wrap{
+  background:var(--gold);padding:14px 0;overflow:hidden;
+}
+.marquee-track{display:flex;gap:0;animation:slide 30s linear infinite}
+.marquee-item{
+  display:flex;align-items:center;gap:20px;padding:0 20px;
+  white-space:nowrap;
+}
+.marquee-item span{font-size:11px;font-weight:600;color:var(--black);letter-spacing:2px;text-transform:uppercase}
+.marquee-item .dot{width:4px;height:4px;background:rgba(0,0,0,.4);border-radius:50%}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ABOUT - NiKS style split */
+.about-section{
+  display:grid;grid-template-columns:1fr 1fr;min-height:80vh;
+}
+.about-image{position:relative;overflow:hidden}
+.about-image img{width:100%;height:100%;object-fit:cover;filter:brightness(.9)}
+.about-image .overlay-text{
+  position:absolute;bottom:40px;left:40px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:80px;font-weight:300;color:rgba(255,255,255,.08);
+  line-height:1;pointer-events:none;
+}
+.about-content{
+  padding:80px 64px;display:flex;flex-direction:column;justify-content:center;
+  background:var(--dark);
+}
+.section-eyebrow{font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:20px}
+.about-content h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:52px;font-weight:300;line-height:1.1;
+  margin-bottom:24px;
+}
+.about-content p{font-size:14px;line-height:1.9;color:var(--mid);margin-bottom:14px}
+.about-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.tag{
+  border:1px solid var(--border);padding:8px 16px;
+  font-size:11px;letter-spacing:1px;color:var(--mid);text-transform:uppercase;
+}
+
+/* SERVICES */
+.services-section{background:var(--black);padding:100px 56px}
+.services-header{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  margin-bottom:60px;
+  border-bottom:1px solid var(--border);padding-bottom:28px;
+}
+.services-header h2{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:300;line-height:1}
+.services-header p{font-size:13px;color:var(--mid);max-width:280px;line-height:1.7;text-align:right}
+.service-tabs{display:flex;gap:0;margin-bottom:48px;border-bottom:1px solid var(--border)}
+.stab{
+  padding:14px 24px;font-size:11px;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--mid);background:none;
+  border:none;cursor:pointer;font-family:'Inter',sans-serif;
+  border-bottom:2px solid transparent;margin-bottom:-1px;
+  transition:all .2s;
+}
+.stab.active{color:var(--gold);border-bottom-color:var(--gold)}
+.stab:hover{color:var(--white)}
+.service-panel{display:none}
+.service-panel.active{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.svc-block{background:var(--dark);padding:36px;transition:background .3s}
+.svc-block:hover{background:#1A1A1A}
+.svc-num{font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--gold);margin-bottom:16px;opacity:.6}
+.svc-block h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;margin-bottom:14px}
+.svc-list{list-style:none}
+.svc-list li{
+  display:flex;justify-content:space-between;
+  font-size:12px;color:var(--mid);
+  padding:8px 0;border-bottom:1px solid var(--border);
+}
+.svc-list li:last-child{border:none}
+.svc-list .price{color:var(--gold);font-weight:500}
+
+/* BRIDAL */
+.bridal-section{
+  display:grid;grid-template-columns:1fr 1fr;min-height:90vh;
+}
+.bridal-content{
+  padding:80px 64px;background:var(--dark);
+  display:flex;flex-direction:column;justify-content:center;
+}
+.bridal-content h2{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:300;line-height:1.05;margin-bottom:20px}
+.bridal-content p{font-size:14px;line-height:1.9;color:var(--mid);margin-bottom:32px}
+.pkg-list{display:flex;flex-direction:column;gap:0;margin-bottom:36px;border-top:1px solid var(--border)}
+.pkg-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:18px 0;border-bottom:1px solid var(--border);
+  transition:all .2s;cursor:default;
+}
+.pkg-row:hover .pkg-name{color:var(--gold)}
+.pkg-name{font-size:14px;font-weight:400;transition:color .2s}
+.pkg-sub{font-size:11px;color:var(--mid);margin-top:3px}
+.pkg-amt{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--gold)}
+.bridal-image{position:relative;overflow:hidden}
+.bridal-image img{width:100%;height:100%;object-fit:cover;filter:brightness(.85)}
+.bridal-badge{
+  position:absolute;top:40px;right:40px;
+  background:var(--gold);color:var(--black);
+  padding:16px 20px;text-align:center;
+}
+.bridal-badge .b-num{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600}
+.bridal-badge .b-lbl{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;margin-top:2px}
+
+/* REVIEWS */
+.reviews-section{background:var(--off);padding:100px 56px}
+.reviews-header{margin-bottom:56px}
+.reviews-header h2{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:var(--black);line-height:1}
+.reviews-header p{font-size:13px;color:#888;margin-top:10px}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.review-card{background:var(--white);padding:32px;border-left:3px solid var(--gold)}
+.stars{color:var(--gold);font-size:13px;margin-bottom:16px;letter-spacing:2px}
+.review-text{
+  font-family:'Cormorant Garamond',serif;font-size:18px;
+  font-style:italic;line-height:1.6;color:var(--black);margin-bottom:20px;
+}
+.reviewer-name{font-size:12px;font-weight:600;color:var(--black);letter-spacing:.5px;text-transform:uppercase}
+.reviewer-svc{font-size:11px;color:#888;margin-top:3px;letter-spacing:.5px}
+
+/* BOOKING */
+.booking-section{
+  display:grid;grid-template-columns:1fr 1fr;min-height:80vh;
+}
+.booking-info{
+  background:var(--gold);padding:80px 64px;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.booking-info h2{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:var(--black);line-height:1.05;margin-bottom:20px}
+.booking-info p{font-size:14px;line-height:1.8;color:rgba(0,0,0,.7);margin-bottom:32px}
+.contact-item{display:flex;align-items:center;gap:14px;margin-bottom:16px;font-size:14px;color:var(--black);text-decoration:none}
+.contact-item:hover{opacity:.7}
+.c-icon{width:36px;height:36px;background:rgba(0,0,0,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.booking-form-wrap{
+  background:var(--dark);padding:80px 64px;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.booking-form-wrap h3{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;margin-bottom:32px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.form-full{margin-bottom:14px}
+input,select,textarea{
+  width:100%;padding:14px 16px;
+  background:rgba(255,255,255,.05);
+  border:1px solid var(--border);
+  font-family:'Inter',sans-serif;font-size:13px;color:var(--white);
+  outline:none;transition:border-color .2s;
+}
+input::placeholder,textarea::placeholder{color:var(--mid)}
+select{color:var(--mid)}
+select option{background:var(--dark);color:var(--white)}
+input:focus,select:focus,textarea:focus{border-color:var(--gold)}
+textarea{resize:vertical;min-height:100px}
+.form-submit{
+  width:100%;padding:16px;
+  background:var(--gold);color:var(--black);
+  border:none;font-size:12px;font-weight:600;
+  letter-spacing:1.5px;text-transform:uppercase;
+  cursor:pointer;font-family:'Inter',sans-serif;
+  transition:background .2s;margin-top:6px;
+}
+.form-submit:hover{background:var(--gold2)}
+
+/* FOOTER */
+.footer{
+  background:var(--black);
+  border-top:1px solid var(--border);
+  padding:40px 56px;
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  gap:40px;align-items:center;
+}
+.footer-logo img{height:56px;width:56px;object-fit:contain;border-radius:50%}
+.footer-logo .logo-text{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;margin-top:8px}
+.footer-logo .logo-sub{font-size:10px;letter-spacing:2px;color:var(--mid);text-transform:uppercase;margin-top:4px}
+.footer-links{display:flex;flex-direction:column;gap:10px}
+.footer-links a{font-size:12px;color:var(--mid);text-decoration:none;letter-spacing:.5px;transition:color .2s}
+.footer-links a:hover{color:var(--gold)}
+.footer-right{text-align:right}
+.footer-right p{font-size:11px;color:var(--mid);line-height:1.8}
+.footer-rating{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--gold);margin-bottom:4px}
+
+/* WHATSAPP */
+.wa-float{
+  position:fixed;bottom:28px;right:28px;z-index:999;
+  width:52px;height:52px;border-radius:50%;
+  background:#25D366;color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px;text-decoration:none;
+  box-shadow:0 4px 24px rgba(37,211,102,.5);
+  transition:transform .2s;
+}
+.wa-float:hover{transform:scale(1.1)}
+
+/* ONLY LADIES BADGE */
+.ladies-badge{
+  display:inline-block;
+  border:1px solid var(--gold);
+  color:var(--gold);font-size:10px;
+  letter-spacing:2px;text-transform:uppercase;
+  padding:6px 14px;margin-bottom:28px;
+}
+
+@media(max-width:900px){
+  nav{padding:16px 20px}
+  .nav-links{display:none}
+  .hero{grid-template-columns:1fr;height:auto}
+  .hero-left{padding:110px 24px 60px}
+  .hero h1{font-size:52px}
+  .hero h1 em{font-size:58px}
+  .hero-right{height:50vh}
+  .hero-stats{left:24px;bottom:32px;gap:28px}
+  .about-section,.bridal-section,.booking-section{grid-template-columns:1fr}
+  .about-image,.bridal-image{height:50vh}
+  .about-content,.bridal-content,.booking-info,.booking-form-wrap{padding:56px 24px}
+  .services-section{padding:60px 24px}
+  .service-panel.active{grid-template-columns:1fr}
+  .reviews-section{padding:60px 24px}
+  .reviews-grid{grid-template-columns:1fr}
+  .footer{grid-template-columns:1fr;padding:32px 24px;text-align:center}
+  .footer-right{text-align:center}
+  .form-row{grid-template-columns:1fr}
+}
+
+/* GALLERY */
+.gallery-section{background:var(--black);padding:100px 56px}
+.gallery-inner{max-width:1200px;margin:0 auto}
+.gallery-header{margin-bottom:48px;display:flex;align-items:flex-end;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:28px}
+.gallery-header h2{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;line-height:1}
+.gallery-header p{font-size:13px;color:var(--mid);max-width:260px;text-align:right;line-height:1.7}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px}
+.gallery-item{position:relative;overflow:hidden;aspect-ratio:3/4;cursor:pointer}
+.gallery-item.wide{grid-column:span 2;aspect-ratio:16/9}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease,filter .4s ease;filter:brightness(.9)}
+.gallery-item:hover img{transform:scale(1.05);filter:brightness(1)}
+.gallery-item .overlay{position:absolute;inset:0;background:rgba(0,0,0,0);transition:background .3s;display:flex;align-items:flex-end;padding:20px}
+.gallery-item:hover .overlay{background:rgba(0,0,0,.3)}
+.gallery-item .cap{font-size:12px;color:#fff;letter-spacing:1px;opacity:0;transform:translateY(10px);transition:all .3s}
+.gallery-item:hover .cap{opacity:1;transform:translateY(0)}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:9999;display:none;align-items:center;justify-content:center}
+.lightbox.open{display:flex}
+.lightbox img{max-width:90vw;max-height:90vh;object-fit:contain}
+.lightbox-close{position:absolute;top:24px;right:32px;color:#fff;font-size:32px;cursor:pointer;background:none;border:none;opacity:.7}
+.lightbox-close:hover{opacity:1}
+
+@media(max-width:900px){
+  .gallery-section{padding:60px 24px}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery-item.wide{grid-column:span 2;aspect-ratio:16/9}
+  .gallery-header{flex-direction:column;align-items:flex-start;gap:12px}
+  .gallery-header p{text-align:left}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-logo">
+    <img src="riya-logo.jpg" alt="Riya Salon Logo">
+  </div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#bridal">Bridal</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#booking">About</a></li>
+  </ul>
+  <a href="tel:09767172116" class="nav-book">Book Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="ladies-badge">Only Ladies</div>
+    <div class="hero-tag">16+ Years Experience · Nanded Fata, Pune</div>
+    <h1>Your<br>Beauty.<br><em>Our</em></h1>
+    <div class="hero-sub">Professional Makeup Artist & Hairstylist</div>
+    <div class="hero-actions">
+      <a href="#booking" class="btn-gold">Book Appointment</a>
+      <a href="#services" class="btn-outline">View Services</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="riya-salon.jpg" alt="Riya Beauty Salon Pune">
+  </div>
+  <div class="hero-stats">
+    <div class="stat-item"><div class="num">5.0★</div><div class="lbl">Google Rating</div></div>
+    <div class="stat-item"><div class="num">500+</div><div class="lbl">Happy Clients</div></div>
+    <div class="stat-item"><div class="num">2</div><div class="lbl">Branches</div></div>
+    <div class="stat-item"><div class="num">16+</div><div class="lbl">Years Exp.</div></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <div class="marquee-item"><span>Hair Styling</span><div class="dot"></div></div>
+    <div class="marquee-item"><span>Bridal Makeup</span><div class="dot"></div></div>
+    <div class="marquee-item"><span>Hydra Facial</span><div class="dot"></div></div>
+    <div class="marquee-item"><span>Keratin Treatment</span><div class="dot"></div></div>
+    <div class="marquee-item"><span>Nail Art</span><div class="dot"></div></div>
+    <div class="marquee-item"><span>Waxing</span><div class="dot"></div></div>
+    <div class="marquee-item"><span>Mehendi</span><div class="dot"></div></div>
+    <div class="marquee-item"><span>Hair Spa</span><div class="dot"></div></div>
+    <div class="marquee-item"><span>De-Tan</span><div class="dot"></div></div>
+    <div class="marquee-item"><span>Hair Styling</span><div class="dot"></div></div>
+    <div class="marquee-item"><span>Bridal Makeup</span><div class="dot"></div></div>
+    <div class="marquee-item"><span>Hydra Facial</span><div class="dot"></div></div>
+    <div class="marquee-item"><span>Keratin Treatment</span><div class="dot"></div></div>
+    <div class="marquee-item"><span>Nail Art</span><div class="dot"></div></div>
+    <div class="marquee-item"><span>Waxing</span><div class="dot"></div></div>
+    <div class="marquee-item"><span>Mehendi</span><div class="dot"></div></div>
+    <div class="marquee-item"><span>Hair Spa</span><div class="dot"></div></div>
+    <div class="marquee-item"><span>De-Tan</span><div class="dot"></div></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="about-image">
+    <img src="riya-logo.jpg" alt="Riya Salon Logo" style="object-fit:contain;background:#111;padding:40px">
+    <div class="overlay-text">Riya</div>
+  </div>
+  <div class="about-content">
+    <div class="section-eyebrow">About Riya Beauty Salon</div>
+    <h2>Redefining Beauty<br>in Pune Since 2008</h2>
+    <p>Riya Beauty Salon is Pune's premier destination for hair, skin, and bridal services. With over 16 years of professional experience, our expert team brings luxury beauty experiences at accessible prices — right here in Nanded Fata.</p>
+    <p>Our expert team specializes in the latest techniques — Hydra Facials, HD Bridal Makeup, Keratin Treatments — using top brands like L'Oréal, Wella, and O3+. Every client leaves feeling their absolute best.</p>
+    <div class="about-tags">
+      <div class="tag">Only Ladies</div>
+      <div class="tag">Hair · Skin · Makeup</div>
+      
+      <div class="tag">16+ Years Experience</div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="services-header">
+    <h2>Our<br>Services</h2>
+    <p>Complete beauty menu with transparent pricing. Premium quality at every visit.</p>
+  </div>
+  <div class="service-tabs">
+    <button class="stab active" onclick="showTab('hair',this)">Hair</button>
+    <button class="stab" onclick="showTab('skin',this)">Skin & Facial</button>
+    <button class="stab" onclick="showTab('waxing',this)">Waxing</button>
+    
+    <button class="stab" onclick="showTab('makeup',this)">Makeup</button>
+    <button class="stab" onclick="showTab('more',this)">More</button>
+  </div>
+
+  <div class="service-panel active" id="panel-hair">
+    <div class="svc-block"><div class="svc-num">01</div><h3>Haircut & Styling</h3><ul class="svc-list"><li><span>Female Haircut (Wash + Blowdry)</span><span class="price">₹794</span></li><li><span>Creative Haircut (Wash + Blowdry)</span><span class="price">₹999</span></li><li><span>Blow Dry - Short</span><span class="price">₹399</span></li><li><span>Blow Dry - Medium</span><span class="price">₹599</span></li><li><span>Blow Dry - Long</span><span class="price">₹799</span></li><li><span>Hair Setting / Updo</span><span class="price">₹599</span></li></ul></div>
+    <div class="svc-block"><div class="svc-num">02</div><h3>Hair Colour</h3><ul class="svc-list"><li><span>Root Touch-Up (2 inch)</span><span class="price">₹799</span></li><li><span>Global Colour (Short)</span><span class="price">₹1,500</span></li><li><span>Global Colour (Long)</span><span class="price">₹2,500</span></li><li><span>Highlights / Balayage</span><span class="price">₹3,000+</span></li><li><span>Ombre / Fashion Colour</span><span class="price">₹3,500+</span></li><li><span>Toning / Glossing</span><span class="price">₹799</span></li></ul></div>
+    <div class="svc-block"><div class="svc-num">03</div><h3>Hair Treatments</h3><ul class="svc-list"><li><span>Keratin Treatment</span><span class="price">₹4,500+</span></li><li><span>Cysteine Treatment</span><span class="price">₹4,000+</span></li><li><span>Richfeel Protein Treatment</span><span class="price">₹2,500+</span></li><li><span>Hair Botox</span><span class="price">₹5,000+</span></li><li><span>Moroccan Hair Spa</span><span class="price">₹999</span></li><li><span>Head Massage</span><span class="price">₹399</span></li></ul></div>
+  </div>
+
+  <div class="service-panel" id="panel-skin">
+    <div class="svc-block"><div class="svc-num">01</div><h3>Facials</h3><ul class="svc-list"><li><span>Seaweed Clean-Up</span><span class="price">₹799</span></li><li><span>O3+ Clean-Up</span><span class="price">₹999</span></li><li><span>D-Tan Bleach Facial</span><span class="price">₹1,099</span></li><li><span>Hydra Facial Treatment</span><span class="price">₹2,499</span></li><li><span>Gold Facial</span><span class="price">₹1,499</span></li><li><span>Anti-Ageing Facial</span><span class="price">₹1,999</span></li></ul></div>
+    <div class="svc-block"><div class="svc-num">02</div><h3>Skin Treatments</h3><ul class="svc-list"><li><span>De-Tanning (Face)</span><span class="price">₹499</span></li><li><span>De-Tanning (Full Body)</span><span class="price">₹1,299</span></li><li><span>Bleach (Face)</span><span class="price">₹299</span></li><li><span>Bleach (Full Body)</span><span class="price">₹999</span></li><li><span>Veg Peel Treatment</span><span class="price">₹1,499</span></li><li><span>Body Polishing</span><span class="price">₹2,499</span></li></ul></div>
+    <div class="svc-block"><div class="svc-num">03</div><h3>Threading & Brow</h3><ul class="svc-list"><li><span>Eyebrow Threading</span><span class="price">₹60</span></li><li><span>Upper Lip / Chin</span><span class="price">₹40</span></li><li><span>Lower Lip / Forehead</span><span class="price">₹40</span></li><li><span>Full Face Threading</span><span class="price">₹199</span></li><li><span>Eyebrow Tinting</span><span class="price">₹299</span></li><li><span>Lash Lift & Tint</span><span class="price">₹1,299</span></li></ul></div>
+  </div>
+
+  <div class="service-panel" id="panel-waxing">
+    <div class="svc-block"><div class="svc-num">01</div><h3>Body Waxing</h3><ul class="svc-list"><li><span>Full Arms</span><span class="price">₹199</span></li><li><span>Full Legs</span><span class="price">₹349</span></li><li><span>Underarms</span><span class="price">₹99</span></li><li><span>Full Body</span><span class="price">₹999</span></li><li><span>Rica Full Body</span><span class="price">₹1,499</span></li><li><span>Bikini Wax</span><span class="price">₹399</span></li></ul></div>
+    <div class="svc-block"><div class="svc-num">02</div><h3>Face Waxing</h3><ul class="svc-list"><li><span>Face Wax</span><span class="price">₹149</span></li><li><span>Upper Lip Wax</span><span class="price">₹49</span></li><li><span>Chin Wax</span><span class="price">₹49</span></li><li><span>Full Face Rica</span><span class="price">₹299</span></li><li><span>Side Lock</span><span class="price">₹79</span></li><li><span>Neck Wax</span><span class="price">₹79</span></li></ul></div>
+    <div class="svc-block"><div class="svc-num">03</div><h3>Threading</h3><ul class="svc-list"><li><span>Eyebrow</span><span class="price">₹30</span></li><li><span>Upper Lip</span><span class="price">₹20</span></li><li><span>Chin</span><span class="price">₹20</span></li><li><span>Side Lock</span><span class="price">₹30</span></li><li><span>Full Face</span><span class="price">₹120</span></li><li><span>Forehead</span><span class="price">₹20</span></li></ul></div>
+  </div>
+
+
+
+  <div class="service-panel" id="panel-makeup">
+    <div class="svc-block"><div class="svc-num">01</div><h3>Party & Event Makeup</h3><ul class="svc-list"><li><span>Basic Makeup</span><span class="price">₹1,499</span></li><li><span>Light / Natural Makeup</span><span class="price">₹1,999</span></li><li><span>Kryolan Waterproof Makeup</span><span class="price">₹2,999</span></li><li><span>Airbrush Makeup</span><span class="price">₹3,500</span></li><li><span>Party Makeup (Family)</span><span class="price">₹3,000/person</span></li><li><span>Saree Draping</span><span class="price">₹499</span></li></ul></div>
+    <div class="svc-block"><div class="svc-num">02</div><h3>Bridal Makeup</h3><ul class="svc-list"><li><span>Engagement Makeup</span><span class="price">₹6,000</span></li><li><span>Basic Bridal</span><span class="price">₹8,000</span></li><li><span>Premium HD Bridal</span><span class="price">₹12,000</span></li><li><span>Airbrush Bridal</span><span class="price">₹12,000</span></li><li><span>Royal Bridal Package</span><span class="price">₹18,000</span></li><li><span>Pre-Bridal Trial</span><span class="price">₹2,500</span></li></ul></div>
+    <div class="svc-block"><div class="svc-num">03</div><h3>Mehendi</h3><ul class="svc-list"><li><span>Simple Mehendi (Hands)</span><span class="price">₹399</span></li><li><span>Full Hand Mehendi</span><span class="price">₹999</span></li><li><span>Bridal Mehendi</span><span class="price">₹3,999</span></li><li><span>Feet Mehendi</span><span class="price">₹599</span></li><li><span>Arabic Design</span><span class="price">₹799</span></li><li><span>Full Bridal Set</span><span class="price">₹5,999</span></li></ul></div>
+  </div>
+
+  <div class="service-panel" id="panel-more">
+    <div class="svc-block"><div class="svc-num">01</div><h3>Body Massage & Spa</h3><ul class="svc-list"><li><span>Head Massage</span><span class="price">₹499</span></li><li><span>Foot Reflexology</span><span class="price">₹599</span></li><li><span>Foot Massage</span><span class="price">₹699</span></li><li><span>Back Massage</span><span class="price">₹999</span></li><li><span>Full Body Massage</span><span class="price">₹1,999</span></li><li><span>Crystal Body Spa</span><span class="price">₹2,999</span></li></ul></div>
+    <div class="svc-block"><div class="svc-num">02</div><h3>Body Polishing & Care</h3><ul class="svc-list"><li><span>Body Polishing (Full Arms)</span><span class="price">₹799</span></li><li><span>Advanced Body Polishing</span><span class="price">₹2,499</span></li><li><span>Body Scrub</span><span class="price">₹1,299</span></li><li><span>D-Tan Full Body</span><span class="price">₹1,499</span></li><li><span>Body Bleach</span><span class="price">₹999</span></li><li><span>Skin Brightening Treatment</span><span class="price">₹1,999</span></li></ul></div>
+    <div class="svc-block"><div class="svc-num">03</div><h3>Combo Packages</h3><ul class="svc-list"><li><span>Glow & Go Package</span><span class="price">₹1,499</span></li><li><span>Party Ready Combo</span><span class="price">₹2,499</span></li><li><span>Festival Special</span><span class="price">₹1,999</span></li><li><span>Full Pampering Day</span><span class="price">₹3,999</span></li><li><span>Pre-Bridal Shoot Combo</span><span class="price">₹4,999</span></li><li><span>Monthly Maintenance</span><span class="price">₹2,999</span></li></ul></div>
+  </div>
+</section>
+
+<!-- BRIDAL -->
+<section class="bridal-section" id="bridal">
+  <div class="bridal-content">
+    <div class="section-eyebrow">Bridal Specialist</div>
+    <h2>Your Perfect<br>Bridal Moment</h2>
+    <p>Our bridal team is trained in HD makeup, airbrush techniques, and traditional bridal looks. We ensure you look stunning from every angle on your most special day.</p>
+    <div class="pkg-list">
+      <div class="pkg-row"><div><div class="pkg-name">Basic Bridal Package</div><div class="pkg-sub">Makeup + Hair Setting + Saree Draping</div></div><div class="pkg-amt">₹8,000</div></div>
+      <div class="pkg-row"><div><div class="pkg-name">Premium Bridal — HD</div><div class="pkg-sub">HD Makeup + Hair + Saree + Mehendi</div></div><div class="pkg-amt">₹12,000</div></div>
+      <div class="pkg-row"><div><div class="pkg-name">Royal Bridal Package</div><div class="pkg-sub">Airbrush + Hair + Mehendi + Nails + Spa</div></div><div class="pkg-amt">₹18,000</div></div>
+      <div class="pkg-row"><div><div class="pkg-name">Engagement Special</div><div class="pkg-sub">Party Makeup + Hair + Eye Makeup</div></div><div class="pkg-amt">₹6,000</div></div>
+    </div>
+    <a href="tel:09767172116" class="btn-gold" style="align-self:flex-start">Book Free Consultation</a>
+  </div>
+  <div class="bridal-image">
+    <img src="riya-salon.jpg" alt="Riya Salon Bridal">
+    <div class="bridal-badge"><div class="b-num">5★</div><div class="b-lbl">Google Rated</div></div>
+  </div>
+</section>
+
+
+<!-- GALLERY -->
+<section class="gallery-section" id="gallery">
+  <div class="gallery-inner">
+    <div class="gallery-header">
+      <div>
+        <div class="section-eyebrow" style="color:var(--gold)">Our Work</div>
+        <h2>Gallery</h2>
+      </div>
+      <p>Real results from real clients at Riya Beauty Salon, Pune</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item wide" onclick="openLightbox('salon-interior1.jpg')">
+        <img src="salon-interior1.jpg" alt="Riya Salon Interior">
+        <div class="overlay"><span class="cap">Our Salon Interior</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('salon-interior2.jpg')">
+        <img src="salon-interior2.jpg" alt="Riya Salon Setup">
+        <div class="overlay"><span class="cap">Professional Setup</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('work-hair1.jpg')">
+        <img src="work-hair1.jpg" alt="Hair Highlights">
+        <div class="overlay"><span class="cap">Hair Highlights</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('work-hair2.jpg')">
+        <img src="work-hair2.jpg" alt="Hair Styling">
+        <div class="overlay"><span class="cap">Hair Styling</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('work-hair3.jpg')">
+        <img src="work-hair3.jpg" alt="Hair Treatment">
+        <div class="overlay"><span class="cap">Hair Treatment</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('work-hair4.jpg')">
+        <img src="work-hair4.jpg" alt="Hair Colour">
+        <div class="overlay"><span class="cap">Hair Colour</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('work-hair5.jpg')">
+        <img src="work-hair5.jpg" alt="Haircut">
+        <div class="overlay"><span class="cap">Haircut & Style</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('work-kids.jpg')">
+        <img src="work-kids.jpg" alt="Kids Haircut">
+        <div class="overlay"><span class="cap">Kids Haircut</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<!-- REVIEWS -->
+<section class="reviews-section" id="reviews">
+  <div class="reviews-header">
+    <div class="section-eyebrow" style="color:var(--gold)">Client Stories</div>
+    <h2>What Our<br>Clients Say</h2>
+    <p>⭐ 5.0 Rating · Google Verified · Nanded Fata, Pune</p>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="stars">★ ★ ★ ★ ★</div>
+      <div class="review-text">"Best bridal makeup in Pune! The team was incredibly professional. I felt absolutely beautiful on my wedding day."</div>
+      <div class="reviewer-name">Priya Sharma</div>
+      <div class="reviewer-svc">Royal Bridal Package</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★ ★ ★ ★ ★</div>
+      <div class="review-text">"Hydra Facial here is absolutely amazing. My skin glowed for weeks. Very hygienic and professional staff."</div>
+      <div class="reviewer-name">Sneha Kulkarni</div>
+      <div class="reviewer-svc">Hydra Facial + De-Tan</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★ ★ ★ ★ ★</div>
+      <div class="review-text">"Keratin results are on par with Lakme but at much better prices. My go-to salon in Pune now. Highly recommend!"</div>
+      <div class="reviewer-name">Anita Desai</div>
+      <div class="reviewer-svc">Keratin Treatment</div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="booking-section" id="contact">
+  <div class="booking-info">
+    <div class="section-eyebrow">Get In Touch</div>
+    <h2>Book Your<br>Appointment</h2>
+    <p>Walk-ins welcome. Advance booking recommended for bridal & special services. UPI & Cash accepted.</p>
+    <a href="tel:09767172116" class="contact-item"><div class="c-icon">📞</div><span>097671 72116</span></a>
+    <a href="https://wa.me/919767172116" class="contact-item"><div class="c-icon">💬</div><span>WhatsApp Us</span></a>
+    <a class="contact-item"><div class="c-icon">📍</div><div><div>Branch 1: Shop No 5, Madhukosh Society</div><div style="font-size:12px;opacity:.7">Sinhgad Rd, Vadgaon Khurd, Nanded Fata, Pune</div></div></a>
+    <a class="contact-item"><div class="c-icon">📍</div><div><div>Branch 2: Shop No 2, H Wing, Prayeja Puram</div><div style="font-size:12px;opacity:.7">Nanded Fata, Wadgaon Budruk, Pune</div></div></a>
+    <a class="contact-item"><div class="c-icon">🕐</div><span>10:00 AM – 8:00 PM Daily</span></a>
+  </div>
+  <div class="booking-form-wrap">
+    <h3>Send a Booking Request</h3>
+    <form onsubmit="submitBooking(event)">
+      <div class="form-row">
+        <input type="text" placeholder="Your Name *" required>
+        <input type="tel" placeholder="Phone Number *" required>
+      </div>
+      <div class="form-full">
+        <select>
+          <option value="">Select Service</option>
+          <option>Hair Styling & Colour</option>
+          <option>Keratin / Hair Treatment</option>
+          <option>Facial & Skin Care</option>
+          <option>Bridal Makeup Package</option>
+          <option>Party Makeup</option>
+          <option>Waxing & Threading</option>
+          <option>Manicure & Pedicure</option>
+          <option>Mehendi</option>
+          <option>Body Spa</option>
+          <option>Combo Package</option>
+        </select>
+      </div>
+      <div class="form-full">
+        <input type="date">
+      </div>
+      <div class="form-full">
+        <textarea placeholder="Special requests or questions..."></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send via WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-logo">
+    <img src="riya-logo.jpg" alt="Riya Salon">
+    <div class="logo-text">Riya Beauty Salon</div>
+    <div class="logo-sub">Professional Makeup Artist & Hairstylist</div>
+  </div>
+  <div class="footer-links">
+    <a href="#services">Services & Prices</a>
+    <a href="#bridal">Bridal Packages</a>
+    <a href="#reviews">Client Reviews</a>
+    <a href="#contact">Book Appointment</a>
+    <a href="tel:09767172116">Call: 097671 72116</a>
+  </div>
+  <div class="footer-right">
+    <div class="footer-rating">5.0 ★</div>
+    <p>Google Verified · Only Ladies · 2 Branches<br>Nanded Fata, Pune · 16+ Years Experience<br>© 2024 Riya Beauty Salon</p>
+  </div>
+</footer>
+
+<a href="https://wa.me/919767172116" class="wa-float" target="_blank">💬</a>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>80);
+});
+function showTab(id,btn){
+  document.querySelectorAll('.service-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.stab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+function submitBooking(e){
+  e.preventDefault();
+  const msg=encodeURIComponent("Hi Riya Beauty Salon! I'd like to book an appointment. Please confirm availability.");
+  window.open('https://wa.me/919767172116?text='+msg,'_blank');
+}
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}});
+},{threshold:0.1});
+document.querySelectorAll('.svc-block,.review-card,.pkg-row').forEach(el=>{
+  el.style.opacity='0';el.style.transform='translateY(20px)';
+  el.style.transition='opacity .5s ease,transform .5s ease';
+  obs.observe(el);
+});
+
+function openLightbox(src) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox(); });
+</script>
+</body>
+</html>
